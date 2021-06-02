@@ -1,0 +1,31 @@
+// buffer 开辟内存的缓冲区
+const buf1 = Buffer.alloc(10) // 申请十个字节的区域
+console.log(buf1)
+
+const buf2 = Buffer.from('a'); // 存取a
+console.log('buf2',buf2) // <Buffer 61> 61为ascll码
+
+const buf3 = Buffer.from('中')
+console.log(buf3) // <Buffer e4 b8 ad>
+
+const buf4 = Buffer.concat([buf2,buf3])
+console.log(buf4,buf4.toString())
+
+// node 分为核心模块和内置模块，区别在于核心模块不要要require引用，内置模块需要引用一下子
+
+// 创建一个长度为10字节以0填充的Buffer
+// const buf1 = Buffer.alloc(10)
+// console.log(buf1)
+
+// // 创建一个Buffer包含ascii.
+// const buf2 = Buffer.from('a')
+// console.log(buf2,buf2.toString())
+
+// // 创建Buffer包含UTF-8字节
+// const buf3 = Buffer.from('中文')
+// console.log(buf3)
+
+// // 合并Buffer
+// const buf4 = Buffer.concat([buf2,buf3])
+// console.log(buf4,buf4.toString())
+
